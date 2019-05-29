@@ -1,5 +1,6 @@
 package com.LirimKusari;
 
+import javax.swing.*;
 import java.awt.image.BufferedImage;
 
 /**
@@ -15,19 +16,21 @@ public class Card { // definitions that one can use to describe the value of a c
     public static final int JACK = 11;
     public static final int QUEEN = 12;
     public static final int KING = 13;
-    private BufferedImage image;
 
     public static final int SIZE_OF_ONE_SUIT = 13;
 
     private String suit;
     private int count;
+    private String firstLetter;
+
 
 //=---------------------------------------------------------------------------------------------------------------------
 
-    public Card(String s, int c  ) {//BufferedImage i
+    public Card(String s, int c , String f) {
         suit = s;
         count = c;
-       // image=i;
+        firstLetter= f;
+
     }
 //=---------------------------------------------------------------------------------------------------------------------
 
@@ -37,5 +40,9 @@ public class Card { // definitions that one can use to describe the value of a c
 
     public int getCount() {
         return count;
+    }
+
+    public String getFirstLetter() {
+        return firstLetter;
     }
 }

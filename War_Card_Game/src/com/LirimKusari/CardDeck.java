@@ -12,10 +12,10 @@ public class CardDeck {
     List<Card> decklist = new ArrayList<Card>();
 
     public CardDeck() {
-        createSuit(Card.SPADES);
-        createSuit(Card.HEARTS);
-        createSuit(Card.CLUBS);
-        createSuit(Card.DIAMONDS);
+        createSuit(Card.SPADES, "S");
+        createSuit(Card.HEARTS, "H");
+        createSuit(Card.CLUBS,"C");
+        createSuit(Card.DIAMONDS,"D");
         Collections.shuffle(decklist);
         printlist();
 
@@ -24,27 +24,26 @@ public class CardDeck {
     public boolean moreCards() {
         return (card_count > 0);
     }
-//=---------------------------------------------------------------------------------------------------------------------
 
-    private void createSuit(String which_suit) {
-        for (int i = 1; i <= Card.SIZE_OF_ONE_SUIT; i = i + 1) {
-            decklist.add(new Card(which_suit, i));
+    //=---------------------------------------------------------------------------------------------------------------------
+    private void createSuit(String which_suit , String letter) {
+        for (int i = 1; i <= Card.SIZE_OF_ONE_SUIT; i++) {
+
+            decklist.add(new Card(which_suit, i,letter));
             card_count = card_count + 1;
         }
     }
 
     public void printlist() {
-//        System.out.println("The size of the deck is"+ decklist.size());
-        for (int i=0; i<decklist.size();i++){
-//            System.out.println((i+1)+" "+decklist.get(i).getCount());
-        }
+
+        System.out.println("The size of the deck is " + decklist.size());
+
+//            for (int i = 0; i < decklist.size(); i++) {
+//                System.out.println((i + 1) + " " + decklist.get(i).getCount());
+//            }
 
     }
-
-    public List<Card> getDecklist() {
-        return decklist;
-    }
-
-
 
 }
+
+
